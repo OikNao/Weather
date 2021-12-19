@@ -16,8 +16,12 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  let seconds = date.getSeconds();
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes}:${seconds}`;
 }
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
