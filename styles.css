@@ -53,21 +53,3 @@ table {
   line-height: 48px;
   padding: 0;
 }
-.cityButton {
-  display: block;
-  text-align: center;
-  margin: 20px auto;
-  padding: 16px 24px;
-  border-radius: 30px;
-  background: white;
-  color: blue;
-  border: solid 1px blue;
-  box-shadow: 3px 2px 3px #afb6bc;
-  font-size: 15px;
-}
-button:hover {
-  cursor: pointer;
-  transition: all ease-in-out 200ms;
-  background: white;
-  color: pink;
-}
