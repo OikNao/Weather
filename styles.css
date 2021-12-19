@@ -1,0 +1,73 @@
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  top: 10px;
+  padding: 40px;
+  font-family: "Bebas Neue", cursive;
+  color: black;
+}
+h1:hover {
+  cursor: pointer;
+  color: purple;
+}
+h3 {
+  font-size: 20px;
+  padding: 0px 10px;
+  font-family: "Times New Roman", Times, serif;
+  color: #9b999b;
+}
+h2 {
+  text-align: center;
+  margin: 0 auto;
+  font-family: "Bebas Neue", cursive;
+}
+div {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+.high-low {
+  font-weight: 90px;
+}
+h4 {
+  top: 0;
+  padding: 0;
+  text-decoration: none;
+  font-weight: none;
+  font-size: 15px;
+}
+h6 {
+  font-weight: none;
+  font-size: 12px;
+  padding: 8px;
+}
+table {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+.sun {
+  padding-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+  border: solid 1px blue;
+  border-radius: 20px;
+  line-height: 48px;
+  padding: 0;
+}
+.cityButton {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 16px 24px;
+  border-radius: 30px;
+  background: white;
+  color: blue;
+  border: solid 1px blue;
+  box-shadow: 3px 2px 3px #afb6bc;
+  font-size: 15px;
+}
+button:hover {
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+  background: white;
+  color: pink;
+}
