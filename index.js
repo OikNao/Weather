@@ -31,10 +31,11 @@ function displayWeather(response) {
 }
 function convertToFarenheit(event) {
   event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = temperatureElement.innerHTML;
+  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
 }
-let temperatureElement = document.querySelector("#temperature");
-let temperature = temperatureElement.innerHTML;
-console.log(temperature);
+
 let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", convertToFarenheit);
 
