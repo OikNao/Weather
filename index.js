@@ -31,14 +31,13 @@ function displayWeather(response) {
 }
 function convertToFarenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
 }
-
+let temperatureElement = document.querySelector("#temperature");
+let temperature = temperatureElement.innerHTML;
+console.log(temperature);
 let farenheitLink = document.querySelector("#farenheit-link");
-addEventListener("click", convertToFarenheit);
+farenheitLink.addEventListener("click", convertToFarenheit);
+
 function search(event) {
   event.preventDefault();
   let apiKey = "9faa788ddbc6b64ff4c8d17ad14685a1";
