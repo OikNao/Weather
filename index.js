@@ -21,6 +21,7 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 function displayWeather(response) {
+  console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML =
     Math.round(response.data.main.temp) + "°C";
@@ -33,7 +34,13 @@ function convertToFarenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+
+  const farenheit = toFarenheit(temperature);
+  temperatureElement.innerHTML = farenheit;
+}
+
+function toFarenheit(degrees) {
+  return Math.round((degrees * 9) / 5 + 32);
 }
 
 let farenheitLink = document.querySelector("#farenheit-link");
