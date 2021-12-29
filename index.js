@@ -33,18 +33,29 @@ function displayWeather(response) {
 function convertToFarenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
 
-  const farenheit = toFarenheit(temperature);
-  temperatureElement.innerHTML = farenheit;
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+
+  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemp);
 }
 
-function toFarenheit(degrees) {
-  return Math.round((degrees * 9) / 5 + 32);
+function convertToCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("actiive");
+
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
+let celsiusTemp = null;
 
 let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", convertToFarenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
 
 function search(event) {
   event.preventDefault();
