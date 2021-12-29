@@ -33,10 +33,8 @@ function displayWeather(response) {
 function convertToFarenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-
   celsiusLink.classList.remove("active");
   farenheitLink.classList.add("active");
-
   let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(farenheitTemp);
 }
@@ -45,17 +43,9 @@ function convertToCelsius(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("actiive");
-
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
-let celsiusTemp = null;
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", convertToFarenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
 
 function search(event) {
   event.preventDefault();
@@ -80,3 +70,11 @@ dateElement.innerHTML = formatDate(currentTime);
 let searchForm = document.querySelector("#search-form");
 
 searchForm.addEventListener("submit", search);
+
+let celsiusTemp = null;
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", convertToFarenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
