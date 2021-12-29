@@ -23,8 +23,9 @@ function formatDate(date) {
 function displayWeather(response) {
   console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML =
-    Math.round(response.data.main.temp) + "°C";
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
   document.querySelector("#temp-high").innerHTML =
     "High: " + Math.round(response.data.main.temp_max) + "°C";
   document.querySelector("#temp-low").innerHTML =
@@ -35,16 +36,19 @@ function convertToFarenheit(event) {
   let temperatureElement = document.querySelector("#temperature");
   celsiusLink.classList.remove("active");
   farenheitLink.classList.add("active");
+  let celsiusTemp = document.querySelector("#temperature").innerHTML;
   let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(farenheitTemp);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("actiive");
-  let temperatureElement = document.querySelector("#temperature");
+  let celsiusTemp = document.querySelector("#temperature").innerHTML;
   temperatureElement.innerHTML = Math.round(celsiusTemp);
+  console.log(celsiusTemp);
 }
 
 function search(event) {
@@ -70,8 +74,6 @@ dateElement.innerHTML = formatDate(currentTime);
 let searchForm = document.querySelector("#search-form");
 
 searchForm.addEventListener("submit", search);
-
-let celsiusTemp = null;
 
 let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", convertToFarenheit);
