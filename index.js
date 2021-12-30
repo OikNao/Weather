@@ -47,8 +47,7 @@ function convertToCelsius(event) {
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("actiive");
   let celsiusTemp = document.querySelector("#temperature").innerHTML;
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-  console.log(celsiusTemp);
+  temperatureElement.innerHTML = celsiusTemp;
 }
 
 function search(event) {
