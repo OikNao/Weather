@@ -28,11 +28,12 @@ h3 {
   text-align: center;
   margin: 0 auto;
   font-size: 15px;
+  padding-bottom: 40px;
 }
 .conversion {
   text-align: center;
   margin: 0 auto;
-  font-size: 15px;
+  font-size: 40px;
 }
 .temp-high {
   text-align: center;
