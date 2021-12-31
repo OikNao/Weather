@@ -21,10 +21,11 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thur", "Fri", "Sat", "Sun", "Mon"];
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
 
   let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
@@ -50,6 +51,14 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "9faa788ddbc6b64ff4c8d17ad14685a1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response) {
   console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
@@ -60,6 +69,8 @@ function displayWeather(response) {
     "High: " + Math.round(response.data.main.temp_max) + "°C";
   document.querySelector("#temp-low").innerHTML =
     "Low: " + Math.round(response.data.main.temp_min) + "°C";
+
+  getForecast(response.data.coord);
 }
 function convertToFarenheit(event) {
   event.preventDefault();
@@ -80,20 +91,15 @@ function convertToCelsius(event) {
   temperatureElement.innerHTML = celsiusTemp;
 }
 
-function search(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "9faa788ddbc6b64ff4c8d17ad14685a1";
-  let city = document.querySelector("#city-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
-  let cityInput = document.querySelector("#city-input");
-  console.log(cityInput.value);
-  if (cityInput.value === undefined || cityInput.value.trim() === "") {
-    alert("Type in a city please");
-    return;
-  }
-  let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = cityInput.value;
+}
+function searchCity(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
 }
 let dateElement = document.querySelector("#date-time");
 
@@ -101,8 +107,7 @@ let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
 let searchForm = document.querySelector("#search-form");
-
-searchForm.addEventListener("submit", search);
+searchForm.addEventListener("submit", searchCity);
 
 let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", convertToFarenheit);
@@ -110,4 +115,4 @@ farenheitLink.addEventListener("click", convertToFarenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-displayForecast();
+search("Montreal");
