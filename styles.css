@@ -1,8 +1,8 @@
 body {
   width: 600px;
-  margin: 0 auto;
-  text-align: center;
   background: #b6d9f0;
+  margin: 0 auto;
+  display: block;
 }
 h1 {
   text-align: center;
@@ -13,52 +13,57 @@ h1 {
   color: black;
 }
 h1:hover {
-  cursor: pointer;
   color: purple;
 }
+
 h3 {
   font-size: 20px;
   padding: 0px 0px 10px;
   font-family: "Times New Roman", Times, serif;
   color: #26408e;
+  text-align: center;
+  margin: 0 auto;
+}
+.units {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 15px;
 }
 .conversion {
   text-align: center;
   margin: 0 auto;
-  font-family: "Bebas Neue", cursive;
-  font-size: 20px;
-}
-div {
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
-}
-.high-low {
-  font-weight: 90px;
-}
-h4 {
-  top: 0;
-  padding: 0;
-  text-decoration: none;
-  font-weight: none;
   font-size: 15px;
 }
-h6 {
-  font-weight: none;
-  font-size: 12px;
-  padding: 8px;
-}
-table {
+.temp-high {
   text-align: center;
-  font-family: "Poppins", sans-serif;
+}
+.temp-low {
+  text-align: center;
+}
+.weather-forecast {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+.weather-forecast-temp-low {
+  color: #7f848a;
+  text-align: center;
 }
 .sun {
-  padding-bottom: 30px;
   font-family: "Poppins", sans-serif;
   border: solid 1px blue;
   border-radius: 20px;
   line-height: 48px;
-  padding: 0;
+}
+.sunrise-time {
+  text-align: center;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.sunset-time {
+  text-align: center;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 .code {
   font-family: monospace;

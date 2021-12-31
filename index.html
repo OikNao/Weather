@@ -28,17 +28,22 @@
      <h3 id="date-time">
      </h3>
     
-      <span class="conversion" id="temperature"> </span>
-      <span class= "units"> <a href="#" id="celsius-link">°C </a>| <a href="#" id="farenheit-link"> °F</a></span>
+     <div class="conversion">
+       <span id="temperature"> </span>
+      <span class= "units"> <a href="#" id="celsius-link">°C </a>| <a href="#" id="farenheit-link"> °F</a></span></div> 
 
     <h4 id="temp-description"></h4>
   <div class="high-low">
       <div class="row" >
- <div class="col-3" id="temp-high">
-        High: 
+ <div class="col-6">
+   <div class="temp-high" id="temp-high">
+      High:
+   </div>
       </div>
-      <div class="col-3" id="temp-low">
-        Low:
+      <div class="col-6">
+        <div class="temp-low" id="temp-low">
+          Low:
+        </div>
       </div>
       </div>
    </div>
@@ -61,129 +66,34 @@
   </div>
   </div>
  </form>
-   <div class="container" id="week-days">
-<h4 class="border p-20 mt-3 rounded">
-<div class="row">
-  <div class="col">
-    Now 
-    <br />
-    ☀️
-    <br />
-   <h6>0°C</h6> 
-  </div>
-  <div class="col">
-    12pm
-    <br />
-    ☀️
-    <br />
-   <h6>-1°C </h6> 
-  </div>
-  <div class="col">
-    1pm
-    <br />
-    ☀️
-    <br />
-    <h6>-1°C </h6>
-  </div>
-  <div class="col">
-    2pm
-    <br />
-    ⛅
-    <br />
-   <h6>-3°C</h6> 
-  </div>
-  <div class="col">
-    3pm
-    <br />
-    ⛅
-    <br />
-    <h6>-3°C</h6>
-  </div>
-   <div class="col">4pm
-     <br />
-     ⛅
-     <br />
-    <h6> -4°C</h6> 
-   </div>
-    <div class="col">5pm
-      <br />
-      🌦️
-      <br />
-     <h6>-4°C </h6> 
+<div class="weather-forecast"> 
+  <div class="row"> 
+    <div class="col-2">
+      <div class="weather-forecast-day"> Fri </div>
+      <img src="https://j.theweathernetwork.com/wx_icons/v1/9.png" width=40>
+      
+      <div><span class="weather-forecast-temp-high"> 22°</span>
+      <span class="weather-forecast-temp-low"> 18° </span> </div>
     </div>
-     <div class="col">6pm
-       <br />
-       🌧️
-       <br />
-      <h6>  -5°C</h6>
-     </div>
+  </div>
 </div>
-</h4>
-   </div>
-      </div>
-    </div>
-<table class="table table-hover">
- 
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Sunday</th>
-      <td>🌧️</td>
-      <td>High: 6°C</td>
-      <td>Low: 2°C</td>
-    </tr>
-    <tr>
-      <th scope="row">Monday</th>
-      <td>🌧️</td>
-      <td>High: 6°C</td>
-      <td>Low: -3°C</td>
-    </tr>
-    <tr>
-    <th scope="row">Tuesday</th>
-      <td>⛅</td>
-      <td>High: 0°C</td>
-      <td>Low: -4°C</td>
-    </tr>
-       <tr>
-    <th scope="row">Wednesday</th>
-      <td>☀️</td>
-      <td>High: 2°C</td>
-      <td>Low: -5°C</td>
-    </tr>
-       <tr>
-    <th scope="row">Thursday</th>
-      <td>⛅</td>
-      <td>High: 5°C</td>
-      <td>Low: -2°C</td>
-    </tr>
-      <tr>
-    <th scope="row">Friday</th>
-      <td>❄️</td>
-      <td>High: 2°C</td>
-      <td>Low: -3°C</td>
-    </tr>
-      <tr>
-    <th scope="row">Saturday</th>
-      <td>⛅</td>
-      <td>High: 0°C</td>
-      <td>Low: -4°C</td>
-    </tr>
-  </tbody>
-</table>
-</table>
 
 <div class="sun">
   <div class="row">
-    <div class="col">
-      Sunrise
-      <hr />
-      7:00am
+    <div class="col-6">
+      <div class="sunrise-time" id="sunrise-time">
+    Sunrise
+       <hr />
+      <div>7:00</div>
+    </div> 
+  </div>
+    <div class="col-6">
+     <div class="sunset-time" id="sunset-time">
+    Sunset  
+     <hr />
+      <div> 4:19</div>
     </div>
-    <div class="col">
-      Sunset
-      <hr />
-      4:19pm
-    </div>
+  </div>
   </div>
 </div>
 <p class="code">
