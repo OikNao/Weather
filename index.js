@@ -20,6 +20,36 @@ function formatDate(date) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thur", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+       <div class="col-2">
+      <div class="weather-forecast-day"> ${day} </div>
+      <img
+      src="https://j.theweathernetwork.com/wx_icons/v1/9.png"
+      alt="" 
+      width=40
+      />
+      
+      <div class="weather-forecast-temperature">
+      <span class="weather-forecast-temp-high"> 22°</span>
+      <span class="weather-forecast-temp-low"> 18° </span>
+      </div>
+  </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeather(response) {
   console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
@@ -79,3 +109,5 @@ farenheitLink.addEventListener("click", convertToFarenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+displayForecast();
