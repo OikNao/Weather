@@ -72,7 +72,6 @@ function getForecast(coordinates) {
 }
 
 function displayWeather(response) {
-  console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -81,6 +80,10 @@ function displayWeather(response) {
     "High: " + Math.round(response.data.main.temp_max) + "°C";
   document.querySelector("#temp-low").innerHTML =
     "Low: " + Math.round(response.data.main.temp_min) + "°C";
+  document.querySelector("#humidity").innerHTML =
+    Math.round(response.data.main.humidity) + "%";
+  document.querySelector("#wind-speed").innerHTML =
+    Math.round(response.data.wind.speed) + "km/h";
 
   getForecast(response.data.coord);
 }
