@@ -97,6 +97,22 @@ function searchCity(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
+
+  if (
+    cityInputElement.value === undefined ||
+    cityInputElement.value.trim() === ""
+  ) {
+    alert("Type in a city please");
+    return;
+  }
+
+  if (
+    cityInputElement.value === undefined ||
+    cityInputElement.value.trim() === ""
+  ) {
+    alert("Type in a city please");
+    return;
+  }
 }
 let dateElement = document.querySelector("#date-time");
 

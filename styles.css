@@ -20,7 +20,7 @@ h1:hover {
   font-size: 20px;
   padding: 0px 0px 10px;
   font-family: "Times New Roman", Times, serif;
-  color: #26408e;
+  color: #885df1;
   text-align: center;
   margin: 0 auto;
 }
@@ -41,8 +41,12 @@ sup {
   margin: 0 auto;
   padding: 0px;
 }
+.humidity {
+  color: #885df1;
+}
 .wind-speed {
   padding-bottom: 20px;
+  color: #885df1;
 }
 .temp-high {
   text-align: center;
