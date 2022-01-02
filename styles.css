@@ -30,6 +30,10 @@ h3 {
   font-size: 15px;
   padding-bottom: 40px;
 }
+sup {
+  vertical-align: super;
+  font-size: 20px;
+}
 .conversion {
   text-align: center;
   margin: 0 auto;
